@@ -1,4 +1,6 @@
+import { DashboardService } from './../dashboard.service';
 import { Component, OnInit } from '@angular/core';
+import Stock from 'src/app/shared/model/stock-model';
 
 @Component({
   selector: 'app-page',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  constructor() { }
+  stock: Stock[] = [];
+
+  constructor(private dashboardService: DashboardService ) { }
 
   ngOnInit(): void {
+    this.fatchStock();
+  }
+
+  async fatchStock(): Promise<void> {
+    this.stock = await this.dashboardService.getStocks();
+    console.log(this.stock);
   }
 
 }

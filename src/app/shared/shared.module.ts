@@ -12,7 +12,7 @@ import { HeaderComponent } from './layout/header/header.component';
     CommonModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
   ]
 })
 export class SharedModule { }
