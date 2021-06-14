@@ -1,0 +1,16 @@
+.header {
+  padding: 1rem 1.25rem;
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media  (max-width: 790px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
