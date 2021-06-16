@@ -9,7 +9,7 @@ import Stock from 'src/app/shared/model/stock-model';
 })
 export class PageComponent implements OnInit {
 
-  stock: Stock[] = [];
+  stocks: Stock[] = [];
 
   constructor(private dashboardService: DashboardService ) { }
 
@@ -18,8 +18,8 @@ export class PageComponent implements OnInit {
   }
 
   async fatchStock(): Promise<void> {
-    this.stock = await this.dashboardService.getStocks();
-    console.log(this.stock);
+    this.stocks = await this.dashboardService.getStocks();
+    console.log(this.stocks);
   }
 
 }

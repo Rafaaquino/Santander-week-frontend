@@ -16,4 +16,10 @@ export class StockCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get variation(): string {
+    const localVariaton = this.stock.variation.toLocaleString();
+    const prefix = this.stock.variation > 0 ? "+" : "-" ;
+    return `${prefix} ${localVariaton.replace("-", "")}%`;
+  }
+
 }
